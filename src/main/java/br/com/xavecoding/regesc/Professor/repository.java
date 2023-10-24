@@ -1,7 +1,10 @@
-package br.com.xavecoding.regesc.repository;
+package br.com.xavecoding.regesc.Professor;
 
-import br.com.xavecoding.regesc.orm.Longitude;
+import br.com.xavecoding.regesc.orm.PostGis;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-public interface repository extends CrudRepository<Longitude, Long> {
+public interface repository extends JpaRepository<PostGis, Long> {
+
 }
