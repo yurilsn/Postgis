@@ -9,19 +9,18 @@ import java.time.LocalDate;
 public class PostGis {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Integer id;
     @Column(nullable = false, unique = true)
-    private int longitdeA;
+    private Integer longitdeA;
     @Column(nullable = false, unique = true)
-    private int longitdeB;
+    private Integer longitdeB;
     @Column(nullable = false, unique = true)
-    private int latitudeA;
+    private Integer latitudeA;
     @Column(nullable = false, unique = true)
-    private int latitudeB;
-    @Column(columnDefinition = "GENERATED AS (LATITUDEA + gitLATITUDEB) VIRTUAL", updatable = false, insertable = false)
-    private LocalDate distancia;
+    private Integer latitudeB;
+    @Column(columnDefinition = "integer GENERATED ALWAYS AS (latitudeB + latitudeA) STORED", updatable = false, insertable = false)
+    private Integer distancia;
 }
-
 
 
 
